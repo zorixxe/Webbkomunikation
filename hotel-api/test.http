@@ -1,0 +1,22 @@
+@baseUrl = http://128.214.253.222:8442
+
+GET {{baseUrl}}
+
+###
+
+GET {{baseUrl}}/rooms
+
+###
+
+PUT {{baseUrl}}/rooms
+Content-Type: application/json
+
+{
+  "number": 404,
+  "price": 1,
+  "type": "quad"
+}
+
+###
+
+GET {{baseUrl}}/rooms/2
