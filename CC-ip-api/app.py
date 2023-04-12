@@ -8,10 +8,15 @@ CORS(app) # Tillåt cross-origin requests
 @app.route("/")
 def hello():
     ip_addr = request.remote_addr
-    return "my ip! " + ip_addr
+    return {
+        "ip": ip_addr, 
+        "msg": "Hello, World!",
+        "list": [1,2,3,4,5],
+        "octets": ip_addr.split("."),
+    }
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8440, debug=True)
+    app.run(host='0.0.0.0', port=8441, debug=True)
 
 
 # Instruktioner
